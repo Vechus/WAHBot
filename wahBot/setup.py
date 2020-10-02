@@ -2,6 +2,7 @@ import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 
+TOKEN = 'PUT YOUR SUPER SECRET TOKEN HERE'
 
 def start(bot, update):
     bot.send_message(update.message.chat_id, text='WAH')
@@ -16,10 +17,10 @@ def unknown(bot, update):
 
 
 def main():
-    ciccia = telegram.Bot(token='771479009:AAGugUnJgzBbraCDhXMtcdByHoYDTsMnxDY')
+    ciccia = telegram.Bot(token=TOKEN)
     print(ciccia.get_me())
 
-    updater = Updater(token='771479009:AAGugUnJgzBbraCDhXMtcdByHoYDTsMnxDY')
+    updater = Updater(token=TOKEN)
 
     dispatcher = updater.dispatcher
     logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
